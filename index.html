@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./favicon.ico">
+
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/main.min.css">
     <title>Startup homepage</title>
@@ -13,9 +13,12 @@
 <body>
     <section class="wr-startup-intro">
         <div class="container-custom">
-            <header>
+            <header class="header">
                 <a class="logo" href="./index.html">Startup</a>
-                <nav>
+                <div class="burger-menu">
+                    <span></span>
+                </div>
+                <nav class="mobile-menu">
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="#services">Services</a></li>
@@ -27,6 +30,29 @@
                     </ul>
                 </nav>
             </header>
+        </div>
+
+        <header class="header sticky">
+            <div class="container-custom">
+                <a class="logo" href="./index.html">Startup</a>
+                <div class="burger-menu">
+                    <span></span>
+                </div>
+                <nav class="mobile-menu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#works">Works</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#clients">Clients</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="container-custom">
             <div class="intro-text-box">
                 <h2>Welcome to startup</h2>
                 <h1>Your favourite creative agency template</h1>
@@ -657,35 +683,66 @@
                         </div>
                     </div>
                 </div>
-                <form action="" method="POST">
+                <form id="form">
                     <div class="wr-input input-name">
-                        <input class="name" type="text" placeholder="Your Name" autocomplete="off" name="name">
-                        <span class="error">This field is required</span>
+                        <input class="name" type="text" placeholder="Your Name" autocomplete="off" id="name">
+
                     </div>
                     <div class="wr-input input-email">
-                        <input class="email" type="email" placeholder="Your E-mail" autocomplete="off" name="email">
-                        <span class="error">This field is required</span>
+                        <input class="email" type="email" placeholder="Your E-mail" autocomplete="off" id="email">
+
                     </div>
                     <div class="wr-input input-subject">
-                        <input class="subject" type="text" placeholder="Your Subject" autocomplete="off" name="subject">
-                        <span class="error">This field is required</span>
+                        <input class="subject" type="text" placeholder="Your Subject" autocomplete="off" id="subject">
+
                     </div>
                     <div class="wr-input input-company">
-                        <input class="company-name" type="text" placeholder="Company name" autocomplete="off" name="company">
-                        <span class="error">This field is required</span>
+                        <input class="company-name" type="text" placeholder="Company name" autocomplete="off" id="company">
+
                     </div>
 
                     <div class="wr-input message-box">
-                        <textarea placeholder="Write your Message" name="message"></textarea>
-                        <span class="error">This field is required</span>
+                        <textarea placeholder="Write your Message" id="message"></textarea>
+
                     </div>
 
-                    <button class="btn-submit" type="button">Send message</button>
+                    <button class="btn-submit" type="submit">Send message</button>
                     <p><span>*</span> We’ll contact you as as possible. We don’t reply on Monday.</p>
+                    <span class="message hidden">Your message has been sent</span>
+                    <span class="error hidden">All fields are required</span>
                 </form>
             </div>
         </div>
     </section>
+    <footer>
+        <div class="container-custom">
+            <ul class="twitter-icons">
+                <li>
+                    <svg viewBox="0 0 17 14">
+                        <path d="M15.969,1.075a6.708,6.708,0,0,1-2.084.774A3.313,3.313,0,0,0,11.492.841a3.236,3.236,0,0,0-3.28,3.19,3.123,3.123,0,0,0,.085.726,9.4,9.4,0,0,1-6.76-3.332,3.1,3.1,0,0,0-.444,1.6A3.166,3.166,0,0,0,2.552,5.682a3.345,3.345,0,0,1-1.485-.4v0.04A3.218,3.218,0,0,0,3.7,8.45,3.364,3.364,0,0,1,2.215,8.5,3.276,3.276,0,0,0,5.279,10.72a6.7,6.7,0,0,1-4.073,1.364A7,7,0,0,1,.423,12.04a9.48,9.48,0,0,0,5.028,1.433A9.134,9.134,0,0,0,14.782,4.4l-0.011-.413A6.5,6.5,0,0,0,16.41,2.336a6.683,6.683,0,0,1-1.883.5A3.226,3.226,0,0,0,15.969,1.075Z"/>
+                    </svg>
+                </li>
+                <li>
+                    <svg viewBox="0 0 17 14">
+                        <path d="M15.969,1.075a6.708,6.708,0,0,1-2.084.774A3.313,3.313,0,0,0,11.492.841a3.236,3.236,0,0,0-3.28,3.19,3.123,3.123,0,0,0,.085.726,9.4,9.4,0,0,1-6.76-3.332,3.1,3.1,0,0,0-.444,1.6A3.166,3.166,0,0,0,2.552,5.682a3.345,3.345,0,0,1-1.485-.4v0.04A3.218,3.218,0,0,0,3.7,8.45,3.364,3.364,0,0,1,2.215,8.5,3.276,3.276,0,0,0,5.279,10.72a6.7,6.7,0,0,1-4.073,1.364A7,7,0,0,1,.423,12.04a9.48,9.48,0,0,0,5.028,1.433A9.134,9.134,0,0,0,14.782,4.4l-0.011-.413A6.5,6.5,0,0,0,16.41,2.336a6.683,6.683,0,0,1-1.883.5A3.226,3.226,0,0,0,15.969,1.075Z"/>
+                    </svg>
+                </li>
+                <li>
+                    <svg viewBox="0 0 17 14">
+                        <path d="M15.969,1.075a6.708,6.708,0,0,1-2.084.774A3.313,3.313,0,0,0,11.492.841a3.236,3.236,0,0,0-3.28,3.19,3.123,3.123,0,0,0,.085.726,9.4,9.4,0,0,1-6.76-3.332,3.1,3.1,0,0,0-.444,1.6A3.166,3.166,0,0,0,2.552,5.682a3.345,3.345,0,0,1-1.485-.4v0.04A3.218,3.218,0,0,0,3.7,8.45,3.364,3.364,0,0,1,2.215,8.5,3.276,3.276,0,0,0,5.279,10.72a6.7,6.7,0,0,1-4.073,1.364A7,7,0,0,1,.423,12.04a9.48,9.48,0,0,0,5.028,1.433A9.134,9.134,0,0,0,14.782,4.4l-0.011-.413A6.5,6.5,0,0,0,16.41,2.336a6.683,6.683,0,0,1-1.883.5A3.226,3.226,0,0,0,15.969,1.075Z"/>
+                    </svg>
+                </li>
+                <li>
+                    <svg viewBox="0 0 17 14">
+                        <path d="M15.969,1.075a6.708,6.708,0,0,1-2.084.774A3.313,3.313,0,0,0,11.492.841a3.236,3.236,0,0,0-3.28,3.19,3.123,3.123,0,0,0,.085.726,9.4,9.4,0,0,1-6.76-3.332,3.1,3.1,0,0,0-.444,1.6A3.166,3.166,0,0,0,2.552,5.682a3.345,3.345,0,0,1-1.485-.4v0.04A3.218,3.218,0,0,0,3.7,8.45,3.364,3.364,0,0,1,2.215,8.5,3.276,3.276,0,0,0,5.279,10.72a6.7,6.7,0,0,1-4.073,1.364A7,7,0,0,1,.423,12.04a9.48,9.48,0,0,0,5.028,1.433A9.134,9.134,0,0,0,14.782,4.4l-0.011-.413A6.5,6.5,0,0,0,16.41,2.336a6.683,6.683,0,0,1-1.883.5A3.226,3.226,0,0,0,15.969,1.075Z"/>
+                    </svg>
+                </li>
+            </ul>
+            <span></span>
+            <p>© 2015 Startup, Designed by ShapedTheme</p>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./js/main.js"></script>
 </body>

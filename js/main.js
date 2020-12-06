@@ -1,6 +1,24 @@
+// sticky-header
+
+window.addEventListener('scroll', function() {
+    let header = document.querySelector('.sticky');
+    header.classList.toggle('show-header', window.scrollY > 500);
+});
+
+// mobile menu
+
+let btnBurger = document.querySelector('.burger-menu');
+let body = document.querySelector('body');
+
+btnBurger.addEventListener('click', function() {
+    document.querySelector('.mobile-menu').classList.toggle('show');
+    btnBurger.classList.toggle('active');
+    body.classList.toggle('overflow');
+});
+
 // swiper
 const mySwiper = new Swiper('.team-gallery', {
-    slidesPerView: 4,
+    slidesPerView: 2,
     spaceBetween: 30,
     loop: true,
 
@@ -8,9 +26,18 @@ const mySwiper = new Swiper('.team-gallery', {
         nextEl: '.swiper-button-forward',
         prevEl: '.swiper-button-back',
     },
+    breakpoints: {
+        740: {
+            slidesPerView: 3
+        },
+        1175: {
+            slidesPerView: 4
+        }
+    }
 });
 
 const bottomSwiper = new Swiper('.clients-gallery', {
+
     spaceBetween: 30,
     loop: true,
     pagination: {
@@ -70,3 +97,33 @@ for (let anchor of anchors) {
         })
     })
 };
+
+// form
+
+$(document).ready(function() {
+    $("#form").submit(function(e) {
+        e.preventDefault();
+        if (($("#name").val() === '') || ($("#email").val() === '') || ($("#subject").val() === '') || ($("#company").val() === '') || ($("#message").val() === '')) {
+            $('.message').hide();
+            $('.error').show();
+            return
+        } else {
+            $('.error').hide();
+        }
+
+        $.ajax({
+            url: "https://formbucket.com/f/buk_3vVrfzO6YBHKugQpjYFH4C5K",
+            method: "POST",
+            dataType: "json",
+            crossDomain: true,
+            success: function() {
+                $('.message').fadeToggle();
+                $('#form')[0].reset();
+            },
+            data: $('#form')
+                .serializeArray()
+
+        });
+
+    });
+});
